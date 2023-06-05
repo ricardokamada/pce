@@ -15,4 +15,9 @@ const Tipo_coleta = sequelize.define('Tipo_coleta', {
   },
 });
 
+Tipo_coleta.hasMany(Cadastro_pce, {
+  foreignKey: 'tipoColetaId', // chave estrangeira na tabela Cadastro_pce
+  as: 'cadastrosPce', // nome da propriedade que será adicionada ao objeto Tipo_coleta
+});
+
 module.exports = Tipo_coleta;
